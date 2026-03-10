@@ -133,6 +133,17 @@ def predict():
     }), 200
 
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({
+        "message": "Welcome to Depression Indicator API",
+        "endpoints": {
+            "predict": "POST /predict",
+            "health": "GET /health"
+        }
+    }), 200
+
+
 @app.route('/health', methods=['GET'])
 def health():
     return jsonify({
